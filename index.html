@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fathima Vafiya — Software Developer Portfolio</title>
+
+    <!-- Bootstrap CSS (needed for Bootstrap JS functionality like Navbar Toggler) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Tailwind Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <meta name="description" content="Fathima Vafiya P — MCA Student | Aspiring Software Developer | Portfolio">
+
+    <script>
+        // Configure Tailwind to enable dark mode based on the 'dark' class
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'accent': '#0d9488', // Teal 600
+                        'accent-light': '#14b8a6', // Teal 500
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Base styling and transitions */
+        body {
+            font-family: 'Inter', sans-serif;
+            /* Default background for light mode */
+            background: linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%);
+            color: #0f172a; /* Slate 900 */
+            transition: background 0.5s, color 0.5s;
+        }
+
+        /* Dark Mode overrides */
+        .dark body {
+            background: #0f172a; /* Slate 900 */
+            color: #e2e8f0; /* Slate 200 */
+        }
+
+        /* --- Timeline Redesign --- */
+        .timeline {
+            position: relative;
+            padding-left: 1.5rem; /* Space for the line */
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0.6rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #0d9488; /* Accent color */
+            border-radius: 4px;
+        }
+        .timeline-item {
+            position: relative;
+            padding-left: 2.5rem; /* Space from line to content */
+            margin-bottom: 2rem;
+        }
+        .timeline-item .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #0d9488; /* Accent color */
+            border: 3px solid #f8fafc; /* Visible border in light mode */
+            position: absolute;
+            left: 0.2rem;
+            top: 0.4rem;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        /* Dark mode dot style */
+        .dark .timeline-item .dot {
+            border-color: #0f172a; /* Matches dark body background */
+        }
+
+        /* Custom style for Bootstrap buttons to adopt Tailwind's primary color */
+        .btn-primary {
+            --bs-btn-bg: #0d9488;
+            --bs-btn-border-color: #0d9488;
+            --bs-btn-hover-bg: #14b8a6;
+            --bs-btn-hover-border-color: #14b8a6;
+            --bs-btn-active-bg: #0f766e;
+            --bs-btn-active-border-color: #0f766e;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white/90 dark:bg-slate-900/90 shadow-sm sticky top-0 z-50 backdrop-blur-md px-3 py-3">
+        <div class="container mx-auto max-w-7xl">
+            <a class="navbar-brand font-semibold text-xl flex items-center gap-2 dark:text-white transition-colors" href="#">
+                <!--  -->
+                <img src="https://avatars.githubusercontent.com/u/583231?v=4" alt="avatar" width="40" height="40" class="rounded-full object-cover ring-2 ring-accent-light">
+                <span class="text-slate-800 dark:text-white">Fathima Vafiya P</span>
+            </a>
+            <button class="navbar-toggler border-2 border-accent text-accent" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu" aria-controls="navmenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navmenu">
+                <ul class="navbar-nav ms-auto flex items-center space-y-2 md:space-y-0 md:space-x-4 mt-3 md:mt-0">
+                    <li class="nav-item"><a class="nav-link text-slate-600 dark:text-slate-300 hover:text-accent font-medium transition-colors" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link text-slate-600 dark:text-slate-300 hover:text-accent font-medium transition-colors" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link text-slate-600 dark:text-slate-300 hover:text-accent font-medium transition-colors" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link text-slate-600 dark:text-slate-300 hover:text-accent font-medium transition-colors" href="#education">Education</a></li>
+                    <li class="nav-item mt-2 md:mt-0">
+                        <a class="btn btn-sm btn-primary md:ms-2 rounded-lg font-semibold shadow-md hover:shadow-lg transition-shadow" href="#contact">
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Container -->
+    <main class="container mx-auto max-w-7xl px-4 py-8">
+        <!-- Hero Section -->
+        <section class="bg-white p-6 lg:p-10 rounded-2xl shadow-2xl border border-gray-100 dark:border-slate-700 dark:bg-slate-800/70 dark:text-white mb-8">
+            <div class="flex flex-col md:flex-row items-center gap-6">
+                <div class="md:w-1/4 flex-shrink-0 text-center">
+                    <img src="/assets/profile.jpg" alt="Fathima Vafiya" onerror="this.src='https://placehold.co/200x200/F0F9FF/0D9488?text=FV'"
+                         class="img-fluid w-48 h-48 object-cover rounded-full mx-auto shadow-xl ring-4 ring-accent-light/50">
+                </div>
+                <div class="md:w-3/4">
+                    <h1 class="text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white mb-1">Fathima Vafiya P</h1>
+                    <p class="text-accent-light font-semibold mb-3 text-xl">MCA Student | Aspiring Software Developer</p>
+
+                    <!-- Contact & Actions -->
+                    <div class="flex flex-wrap gap-3 items-center mb-4">
+                        <a class="btn btn-sm btn-primary rounded-full shadow-md hover:shadow-lg" href="mailto:fathimavafiya1728@gmail.com">
+                            <i class="fa fa-envelope me-2"></i>Email Me
+                        </a>
+                        <a class="btn btn-sm btn-outline-secondary dark:text-slate-300 dark:border-slate-500 rounded-full" href="https://linkedin.com/in/fathima-vafiya-24601307a" target="_blank">
+                            <i class="fab fa-linkedin me-2"></i>LinkedIn
+                        </a>
+                        <a class="btn btn-sm btn-outline-dark dark:text-slate-300 dark:border-slate-500 rounded-full" href="#projects">
+                            <i class="fa fa-folder-open me-2"></i>Projects
+                        </a>
+                        <button id="themeToggle" class="btn btn-sm text-sm dark:bg-slate-700 dark:text-white rounded-full bg-slate-100 text-slate-700 transition-colors">
+                            <i class="fa fa-moon me-1"></i>Toggle Dark Mode
+                        </button>
+                    </div>
+
+                    <p class="text-lg font-medium mb-1">
+                        <i class="fa fa-map-marker-alt text-accent mr-2"></i>Palakkad, Kerala, India
+                    </p>
+
+                    <p class="text-slate-700 dark:text-slate-300 mt-3 border-t border-gray-200 dark:border-slate-700 pt-3">
+                        <strong class="text-slate-900 dark:text-white">Career Objective:</strong> To pursue a challenging and rewarding career in software development where I can apply my strong foundation in programming, database management, and problem-solving skills. Aiming to build efficient and user-friendly applications while continuously learning modern technologies.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Main Content Column (Lg: 2/3) -->
+            <div class="lg:col-span-2">
+                <!-- Profile & Skills -->
+                <section id="about" class="bg-white dark:bg-slate-800 rounded-xl shadow-lg p-6 mb-8 border border-gray-100 dark:border-slate-700">
+                    <h3 class="text-2xl font-bold mb-3 border-b-2 border-accent-light/50 pb-2">Profile</h3>
+                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed">A passionate and motivated MCA student with a strong background in computer applications, programming, and problem-solving. Proficient in developing software solutions, database management, and applying algorithms for real-world applications. Dedicated to continuous learning and contributing to innovative IT projects.</p>
+
+                    <hr class="my-6 border-gray-200 dark:border-slate-700">
+
+                    <h4 id="skills" class="text-2xl font-bold mb-3">Technical Skills</h4>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <!-- Skill Badges with Tailwind styling -->
+                        <span class="inline-block px-4 py-1 text-sm font-semibold rounded-full bg-teal-100 text-teal-800 dark:bg-teal-700 dark:text-teal-100 shadow-sm transition-all hover:scale-[1.02]">C</span>
+                        <span class="inline-block px-4 py-1 text-sm font-semibold rounded-full bg-teal-100 text-teal-800 dark:bg-teal-700 dark:text-teal-100 shadow-sm transition-all hover:scale-[1.02]">Java</span>
+                        <span class="inline-block px-4 py-1 text-sm font-semibold rounded-full bg-teal-100 text-teal-800 dark:bg-teal-700 dark:text-teal-100 shadow-sm transition-all hover:scale-[1.02]">Python</span>
+                        <span class="inline-block px-4 py-1 text-sm font-semibold rounded-full bg-indigo-100 text-indigo-800 dark:bg-indigo-700 dark:text-indigo-100 shadow-sm transition-all hover:scale-[1.02]">HTML</span>
+                        <span class="inline-block px-4 py-1 text-sm font-semibold rounded-full bg-indigo-100 text-indigo-800 dark:bg-indigo-700 dark:text-indigo-100 shadow-sm transition-all hover:scale-[1.02]">CSS</span>
+                        <span class="inline-block px-4 py-1 text-sm font-semibold rounded-full bg-yellow-100 text-yellow-800 dark:bg-yellow-700 dark:text-yellow-100 shadow-sm transition-all hover:scale-[1.02]">MySQL</span>
+                    </div>
+
+                    <h5 class="text-xl font-bold mt-4 mb-2">Soft Skills</h5>
+                    <div class="flex flex-wrap gap-4 text-slate-600 dark:text-slate-300">
+                        <p class="flex items-center"><i class="fa fa-check-circle text-accent-light mr-2"></i>Communication</p>
+                        <p class="flex items-center"><i class="fa fa-check-circle text-accent-light mr-2"></i>Team Collaboration</p>
+                        <p class="flex items-center"><i class="fa fa-check-circle text-accent-light mr-2"></i>Problem-Solving</p>
+                        <p class="flex items-center"><i class="fa fa-check-circle text-accent-light mr-2"></i>Time Management</p>
+                        <p class="flex items-center"><i class="fa fa-check-circle text-accent-light mr-2"></i>Adaptability</p>
+                    </div>
+
+                </section>
+
+                <!-- Projects -->
+                <section id="projects" class="bg-white dark:bg-slate-800 rounded-xl shadow-lg p-6 mb-8 border border-gray-100 dark:border-slate-700">
+                    <h4 class="text-2xl font-bold mb-4 border-b-2 border-accent-light/50 pb-2">Projects</h4>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <!-- Project 1 -->
+                        <div class="p-4 border border-gray-200 dark:border-slate-700 rounded-lg bg-gray-50 dark:bg-slate-700/50 hover:shadow-xl transition-shadow">
+                            <h5 class="text-lg font-semibold mb-1 text-slate-800 dark:text-white">Event Management Automation — Green Gala</h5>
+                            <p class="mb-2 text-sm text-slate-500 dark:text-slate-400">An event management system that automates booking, coordination, and feedback collection for personal and corporate events.</p>
+                            <p class="mb-2 text-sm font-medium">
+                                <strong class="text-accent-light">Tech:</strong> HTML, CSS, Python, MySQL
+                            </p>
+                            <a href="#" class="text-accent-light hover:text-accent font-medium text-sm transition-colors flex items-center">
+                                <i class="fa fa-code-branch mr-2"></i> View repository
+                            </a>
+                        </div>
+
+                        <!-- Project 2 -->
+                        <div class="p-4 border border-gray-200 dark:border-slate-700 rounded-lg bg-gray-50 dark:bg-slate-700/50 hover:shadow-xl transition-shadow">
+                            <h5 class="text-lg font-semibold mb-1 text-slate-800 dark:text-white">Data Dashboard (Academic)</h5>
+                            <p class="mb-2 text-sm text-slate-500 dark:text-slate-400">Interactive data dashboard to visualize student performance metrics using Python and Pandas.</p>
+                            <p class="mb-2 text-sm font-medium">
+                                <strong class="text-accent-light">Tech:</strong> Python, Pandas, Matplotlib
+                            </p>
+                            <a href="#" class="text-accent-light hover:text-accent font-medium text-sm transition-colors flex items-center">
+                                <i class="fa fa-code-branch mr-2"></i> View repository
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Education -->
+                <section id="education" class="bg-white dark:bg-slate-800 rounded-xl shadow-lg p-6 mb-8 border border-gray-100 dark:border-slate-700">
+                    <h4 class="text-2xl font-bold mb-4 border-b-2 border-accent-light/50 pb-2">Education</h4>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="dot"></div>
+                            <h6 class="text-lg font-semibold mb-0 text-slate-800 dark:text-white">Master of Computer Applications (MCA)</h6>
+                            <small class="text-slate-500 dark:text-slate-400 block mb-1">LEAD College, Palakkad — 2025 – 2027</small>
+                            <p class="text-sm mb-0 text-slate-600 dark:text-slate-300">Focus: Software development, advanced databases, web technologies.</p>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="dot"></div>
+                            <h6 class="text-lg font-semibold mb-0 text-slate-800 dark:text-white">BSc Mathematics and Physics</h6>
+                            <small class="text-slate-500 dark:text-slate-400">MEA Arts and Science College, Malappuram — 2022 – 2025</small>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="dot"></div>
+                            <h6 class="text-lg font-semibold mb-0 text-slate-800 dark:text-white">Higher Secondary (Biology Science)</h6>
+                            <small class="text-slate-500 dark:text-slate-400">PSLAMIAHS Higher Secondary School — 2020 – 2022</small>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="dot"></div>
+                            <h6 class="text-lg font-semibold mb-0 text-slate-800 dark:text-white">SSLC</h6>
+                            <small class="text-slate-500 dark:text-slate-400">PSLAMIAHS Higher Secondary School — 2019 – 2020</small>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Sidebar Column (Lg: 1/3) -->
+            <aside class="lg:col-span-1">
+                <!-- Contact Card -->
+                <div id="contact" class="bg-white dark:bg-slate-800 rounded-xl shadow-lg p-6 mb-8 border border-gray-100 dark:border-slate-700">
+                    <h5 class="text-xl font-bold mb-3 text-slate-800 dark:text-white">Get in Touch</h5>
+                    <p class="mb-2 text-slate-600 dark:text-slate-300 flex items-center">
+                        <i class="fa fa-phone text-accent mr-3"></i> +91 8138841728
+                    </p>
+                    <p class="mb-2 text-slate-600 dark:text-slate-300 flex items-center">
+                        <i class="fa fa-envelope text-accent mr-3"></i>
+                        <a href="mailto:fathimavafiya1728@gmail.com" class="text-accent hover:underline">fathimavafiya1728@gmail.com</a>
+                    </p>
+                    <p class="mb-2 text-slate-600 dark:text-slate-300 flex items-center">
+                        <i class="fa fa-map-marker-alt text-accent mr-3"></i> Palakkad, Kerala, India
+                    </p>
+                    <p class="mb-0 text-slate-600 dark:text-slate-300 flex items-center">
+                        <i class="fab fa-linkedin text-accent mr-3"></i>
+                        <a href="https://linkedin.com/in/fathima-vafiya-24601307a" target="_blank" class="text-accent hover:underline">LinkedIn profile</a>
+                    </p>
+                </div>
+
+                <!-- GitHub Stats -->
+                <div class="bg-white dark:bg-slate-800 rounded-xl shadow-lg p-4 mb-8 border border-gray-100 dark:border-slate-700 text-center">
+                    <h6 class="text-xl font-bold mb-3 text-slate-800 dark:text-white">GitHub Activity</h6>
+                    <!-- Added 'bg' parameter to make the stats card background transparent so it works better with dark/light mode -->
+                    <img src="https://github-readme-stats.vercel.app/api?username=fathimavafiya&show_icons=true&theme=default&bg_color=ffffff00&border_color=ffffff00&text_color=333" alt="github stats" class="w-full h-auto mb-2 dark:hidden">
+                    <!-- Dark mode specific stats image -->
+                    <img src="https://github-readme-stats.vercel.app/api?username=fathimavafiya&show_icons=true&theme=dark&bg_color=ffffff00&border_color=ffffff00&text_color=fff" alt="github stats dark" class="w-full h-auto mb-2 hidden dark:block">
+
+                    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=fathimavafiya&layout=compact&theme=default&bg_color=ffffff00&border_color=ffffff00&text_color=333" alt="top languages" class="w-full h-auto mt-2 dark:hidden">
+                    <!-- Dark mode specific language stats image -->
+                    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=fathimavafiya&layout=compact&theme=dark&bg_color=ffffff00&border_color=ffffff00&text_color=fff" alt="top languages dark" class="w-full h-auto mt-2 hidden dark:block">
+                </div>
+
+                <!-- Extra Curricular -->
+                <div class="bg-white dark:bg-slate-800 rounded-xl shadow-lg p-6 border border-gray-100 dark:border-slate-700">
+                    <h6 class="text-xl font-bold mb-2 text-slate-800 dark:text-white">Extra Curricular</h6>
+                    <ul class="list-disc pl-5 text-slate-600 dark:text-slate-300 space-y-1">
+                        <li>Organized fundraising and donation drives</li>
+                        <li>Assisted in awareness campaigns and community programmes</li>
+                        <li>Volunteer work demonstrating leadership and teamwork</li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-12 py-4 text-center border-t border-gray-200 dark:border-slate-700">
+            <p class="mb-0 text-sm text-slate-500 dark:text-slate-400">© <span id="year"></span> Fathima Vafiya P — Designed with Tailwind CSS & Bootstrap.</p>
+        </footer>
+    </main>
+
+    <!-- Bootstrap JS + Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script type="module">
+        // Set current year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                const href = a.getAttribute('href');
+                if (href === '#' || href === '') return; // Skip non-anchor links
+
+                const target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    // Use standard scrollIntoView
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+                    // Optional: Update URL hash without breaking smooth scrolling
+                    setTimeout(() => {
+                        window.history.pushState(null, '', href);
+                    }, 400); // Small delay to allow scroll to start
+                }
+            });
+        });
+
+        // --- Dark Mode Logic (Using standard Tailwind 'dark' class) ---
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+
+        // Check for theme in localStorage or default to system preference
+        let currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+        const updateTheme = (theme) => {
+            if (theme === 'dark') {
+                html.classList.add('dark');
+                themeToggle.innerHTML = '<i class="fa fa-sun me-1"></i>Light Mode';
+            } else {
+                html.classList.remove('dark');
+                themeToggle.innerHTML = '<i class="fa fa-moon me-1"></i>Toggle Dark Mode';
+            }
+            localStorage.setItem('theme', theme);
+        };
+
+        // Initial theme application
+        updateTheme(currentTheme);
+
+        // Toggle handler
+        themeToggle.addEventListener('click', () => {
+            currentTheme = html.classList.contains('dark') ? 'light' : 'dark';
+            updateTheme(currentTheme);
+        });
+        
+        // Image Fallback (Profile image)
+        document.querySelectorAll('img').forEach(img => {
+          if(img.alt.includes('Fathima')) {
+            img.addEventListener('error', () => {
+                const size = img.width || 200;
+                img.src = `https://placehold.co/${size}x${size}/F0F9FF/0D9488?text=FV`;
+            });
+          }
+        });
+    </script>
+
+</body>
+</html>
